@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  web:   
+    build: ./rap4g
+    restart: always
+    environment:
+      - WATCHPACK_POLLING=true
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./rap4g/src:/app/src
+    command: npm run start
+
+
