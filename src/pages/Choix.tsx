@@ -72,7 +72,7 @@ function Choix(){
                             onStopSpinning={wheelStopped}
                         />
                         <br/>
-                        <div style={styleDivResultat}> className='Syll'>
+                        <div style={styleDivResultat} className='Syll'>
                             < label {syllabes[choice].option}</label>
                         </div>                        
                         <br />
