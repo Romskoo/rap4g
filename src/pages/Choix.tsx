@@ -33,7 +33,8 @@ function Choix(){
 
     const wheelStopped = () =>{
         setStyleDivResultat({display:"block"})
-        setCanSpin(true)
+        setCanSpin(false)
+        setStart(false)
     }
 
     useEffect(()=>{
