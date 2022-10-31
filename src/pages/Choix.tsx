@@ -27,8 +27,9 @@ function Choix(){
     }
 
     const clickLancer = () =>{
-        randomChoice()
         setStart(true)
+        setStyleDivResultat({display:"none"})
+        randomChoice()
     }
 
     const wheelStopped = () =>{
