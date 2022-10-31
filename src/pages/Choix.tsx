@@ -14,14 +14,16 @@ function Choix(){
     let state:any = location.state;
 
     const syllabes = [{option:'RA'},{option:'IR'},{option:'TO'},{option:'LU'},{option:'LA'},{option:'PLA'},{option:'CHI'},{option:'Ré'},{option:'UR'},{option:'ITE'},{option:'CHE'},{option:'EUR'},{option:'RO'},{option:'NI'},{option:'VU'},{option:'IS'},{option:'Lé'},{option:'PI'},{option:'INE'},{option:'MA'},{option:'NO'},{option:'FI'},{option:'SA'}]
-    
+    const syllabesUsed = []
+    const syllabesLeft = syllabes
+
     const [canSpin, setCanSpin] = useState(false);
     const [start, setStart] = useState(false);
     const [choice, setChoice] = useState(0);
     const [styleDivResultat,setStyleDivResultat] = useState<style>({display:"none"})
 
     function randomChoice (){
-        var random = Math.round(1 + Math.random() * (syllabes.length ))
+        var random = Math.round(1 + Math.random() * (syllabesLeft.length ))
         console.log(random)
          setChoice(random)
     }
@@ -31,11 +33,16 @@ function Choix(){
         setStyleDivResultat({display:"none"})
         randomChoice()
     }
+    
+    function retirerSyllabe(s:string){
+        setSyllabesLeft((current)=>{current.filter((syllabe)=>syllabe.option === s)})
+    }
 
     const wheelStopped = () =>{
         setStyleDivResultat({display:"block"})
         setCanSpin(false)
         setStart(false)
+        retirerSyllabe(syllabesLeft[choice].option)
     }
 
     useEffect(()=>{
@@ -57,7 +64,7 @@ function Choix(){
                     <Col></Col>
                     <Col>
                         <Wheel
-                            data={syllabes}
+                            data={syllabesLeft}
                             prizeNumber={choice}
                             mustStartSpinning={start}
                             backgroundColors={['#3e3e3e', '#df3428']}
