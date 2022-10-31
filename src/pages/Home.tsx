@@ -1,6 +1,6 @@
 
-import { useLocation,useNavigate } from 'react-router-dom';
-import React,{ useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import {Form, Button,Col,Row,Container } from 'react-bootstrap';
 import '../css/Bg.css'
 

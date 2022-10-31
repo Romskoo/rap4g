@@ -1,6 +1,6 @@
 import { useLocation,useNavigate } from 'react-router-dom';
-import React,{ useState, useEffect } from 'react';
-import {Form, Button,Col,Row,Container } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Button,Col,Row,Container } from 'react-bootstrap';
 import { Wheel } from 'react-custom-roulette'
 import 'react-roulette-pro/dist/index.css';
 import '../css/Bg.css'
