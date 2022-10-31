@@ -14,7 +14,6 @@ function Choix(){
     let state:any = location.state;
 
     const syllabes = [{option:'RA'},{option:'IR'},{option:'TO'},{option:'LU'},{option:'LA'},{option:'PLA'},{option:'CHI'},{option:'Ré'},{option:'UR'},{option:'ITE'},{option:'CHE'},{option:'EUR'},{option:'RO'},{option:'NI'},{option:'VU'},{option:'IS'},{option:'Lé'},{option:'PI'},{option:'INE'},{option:'MA'},{option:'NO'},{option:'FI'},{option:'SA'}]
-    const syllabesUsed = []
     const [syllabesLeft,setSyllabesLeft] = useState(syllabes)
 
     const [canSpin, setCanSpin] = useState(false);
