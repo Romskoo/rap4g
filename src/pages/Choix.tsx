@@ -73,7 +73,7 @@ function Choix(){
                         />
                         <br/>
                         <div style={styleDivResultat} className='Syll'>
-                            < label {syllabes[choice].option}</label>
+                            < label> {syllabes[choice].option}</label>
                         </div>                        
                         <br />
                         <div className="d-grid gap-2">
