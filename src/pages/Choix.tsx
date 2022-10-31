@@ -1,4 +1,4 @@
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Button,Col,Row,Container } from 'react-bootstrap';
 import { Wheel } from 'react-custom-roulette'
@@ -10,7 +10,6 @@ function Choix(){
         display:string;
     }
 
-    let navigate = useNavigate();
     let location = useLocation();
     let state:any = location.state;
 
@@ -37,15 +36,7 @@ function Choix(){
         setCanSpin(true)
     }
 
-    const afficheDivLogin = () =>{
-        if(styleDivResultat.display === "none")
-            setStyleDivResultat({display:"block"})
-        else
-            setStyleDivResultat({display:"none"})
-    }
-
     useEffect(()=>{
-        console.log(location)
         if(state === null){
             console.log('pas state')
 
@@ -53,7 +44,7 @@ function Choix(){
             console.log('pas joueurs')
             
         }
-    },[])
+    },[state])
 
     
     return(
