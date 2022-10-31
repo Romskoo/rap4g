@@ -35,7 +35,7 @@ function Choix(){
     }
     
     function retirerSyllabe(s:string){
-        setSyllabesLeft((current)=>{current.filter((syllabe)=>syllabe.option === s)})
+        setSyllabesLeft((current)=>current.filter((syllabe)=>syllabe.option === s))
     }
 
     const wheelStopped = () =>{
