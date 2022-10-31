@@ -13,7 +13,7 @@ function Choix(){
     let location = useLocation();
     let state:any = location.state;
 
-    const syllabes = [{option:'RA'},{option:'IR'},{option:'TO'},{option:'LU'},{option:'LA'},{option:'PLA'},{option:'CHI'},{option:'Ré'},{option:'UR'}]
+    const syllabes = [{option:'RA'},{option:'IR'},{option:'TO'},{option:'LU'},{option:'LA'},{option:'PLA'},{option:'CHI'},{option:'Ré'},{option:'UR'},{option:'ITE'},{option:'CHE'},{option:'EUR'},{option:'RO'},{option:'NI'},{option:'VU'},{option:'IS'},{option:'Lé'},{option:'PI'},{option:'INE'},{option:'MA'},{option:'NO'},{option:'FI'},{option:'SA'}]
     
     const [canSpin, setCanSpin] = useState(false);
     const [start, setStart] = useState(false);
@@ -63,7 +63,9 @@ function Choix(){
                             onStopSpinning={wheelStopped}
                         />
                         <br/>
-                        < label style={styleDivResultat}> {syllabes[choice].option}</label>
+                        <div className='Syll'>
+                            < label style={styleDivResultat}> {syllabes[choice].option}</label>
+                        </div>                        
                         <br />
                         <div className="d-grid gap-2">
                             < Button variant='dark' size="lg" disabled={canSpin}  onClick={clickLancer}>Lancer</Button>
