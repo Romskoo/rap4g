@@ -65,8 +65,8 @@ function Choix(){
                             onStopSpinning={wheelStopped}
                         />
                         <br/>
-                        <div className='Syll'>
-                            < label style={styleDivResultat}> {syllabes[choice].option}</label>
+                        <div style={styleDivResultat}> className='Syll'>
+                            < label {syllabes[choice].option}</label>
                         </div>                        
                         <br />
                         <div className="d-grid gap-2">
