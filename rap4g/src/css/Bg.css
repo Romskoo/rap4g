@@ -1,0 +1,8 @@
+.page{
+    background-color: #69696A;
+    height: 100%;
+}
+
+body > #root > div {
+    height: 100vh;
+  }
