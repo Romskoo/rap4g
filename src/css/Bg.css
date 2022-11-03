@@ -8,7 +8,48 @@ body > #root > div {
   }
 
 .Syll{
-    align-content: center;
+    justify-content: center;
     color: white;
-    font-size: large;
+    font-size: xx-large;
 }
+
+.joueur{
+    background-color: #7b7b8b;
+    border-color: black;
+    justify-content: center;
+    display: flex;
+    margin: 1em;
+}
+
+.Jeux{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.shots{
+    color: white;
+    font-size: xx-large;
+}
+
+.phraseExp{
+    color: white;
+    font-size: x-large;
+    justify-content: center;
+    display: flex;
+}
+
+.countdown{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.infoJoueurs{
+    color: white;
+    font-size: x-large;
+    justify-content: center;
+    display: flex;
+}
+

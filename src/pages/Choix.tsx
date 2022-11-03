@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Button,Col,Row,Container } from 'react-bootstrap';
 import { Wheel } from 'react-custom-roulette'
@@ -12,47 +12,64 @@ function Choix(){
 
     let location = useLocation();
     let state:any = location.state;
+    let navigate =  useNavigate();
 
     const syllabes = [{option:'RA'},{option:'IR'},{option:'TO'},{option:'LU'},{option:'LA'},{option:'PLA'},{option:'CHI'},{option:'Ré'},{option:'UR'},{option:'ITE'},{option:'CHE'},{option:'EUR'},{option:'RO'},{option:'NI'},{option:'VU'},{option:'IS'},{option:'Lé'},{option:'PI'},{option:'INE'},{option:'MA'},{option:'NO'},{option:'FI'},{option:'SA'}]
     const [syllabesLeft,setSyllabesLeft] = useState(syllabes)
-
+    const [syllabesUsed,setSyllabesUsed] = useState(state.syllabesUsed)
     const [canSpin, setCanSpin] = useState(false);
+    const [canPlay, setCanPlay] = useState(true);
     const [start, setStart] = useState(false);
     const [choice, setChoice] = useState(0);
+    const [syllabeChoice,setSyllabeChoice] = useState<string>('');
     const [styleDivResultat,setStyleDivResultat] = useState<style>({display:"none"})
 
     function randomChoice (){
         var random = Math.round(1 + Math.random() * (syllabesLeft.length ))
-        console.log(random)
-         setChoice(random)
+        setChoice(random)
+        setSyllabeChoice(syllabesLeft[random].option)
     }
 
     const clickLancer = () =>{
         setStart(true)
+        setCanPlay(true)
         setStyleDivResultat({display:"none"})
         randomChoice()
     }
+
+    const clickJouer = () =>{
+        navigate('/Jeux',{state:{
+            joueurs: state.joueurs,
+            syllabesUsed:syllabesUsed
+        }})
+    }
     
-    function retirerSyllabe(s:string){
-        setSyllabesLeft((current)=>current.filter((syllabe)=>syllabe.option !== s))
+    function retirerSyllabe(s:any){
+        setSyllabesUsed(syllabesUsed.concat([s]))
     }
 
     const wheelStopped = () =>{
-        setStyleDivResultat({display:"block"})
+        setStyleDivResultat({display:"flex"})
         setCanSpin(false)
         setStart(false)
-        retirerSyllabe(syllabesLeft[choice].option)
+        retirerSyllabe(syllabesLeft[choice])
+        setCanPlay(false)
     }
 
     useEffect(()=>{
-        if(state === null){
-            console.log('pas state')
+        console.log('syllabesUsed changed')
+        console.log(syllabesUsed)
+        setSyllabesLeft(syllabesLeft.filter(s => !syllabesUsed.includes(s)))
+    },[syllabesUsed])
 
-        }else if(state.joueurs === undefined){
-            console.log('pas joueurs')
-            
+    useEffect(()=>{
+        if(state === null){
+            navigate('/Home')
+
+        }else if(state.joueurs === undefined || state.syllabesUsed===undefined){
+            navigate('/Home')           
         }
-    },[state])
+    },[state,navigate])
 
     
     return(
@@ -71,12 +88,16 @@ function Choix(){
                             onStopSpinning={wheelStopped}
                         />
                         <br/>
-                        <div style={styleDivResultat} className='Syll'>
-                            < label> {syllabes[choice].option}</label>
+                        <div style={styleDivResultat} className='Syll text-wrap'>
+                             {syllabeChoice}
                         </div>                        
                         <br />
                         <div className="d-grid gap-2">
                             < Button variant='dark' size="lg" disabled={canSpin}  onClick={clickLancer}>Lancer</Button>
+                        </div>
+                        <br/>
+                        <div className="d-grid gap-2">
+                            < Button variant='dark' size="lg" disabled={canPlay}  onClick={clickJouer}>Jouer</Button>
                         </div>
                     </Col>
                     <Col></Col>
