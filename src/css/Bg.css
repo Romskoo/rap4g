@@ -24,7 +24,6 @@ body > #root > div {
 .Jeux{
     justify-content: center;
     display: flex;
-    align-items: center;
 
 }
 
@@ -53,3 +52,7 @@ body > #root > div {
     display: flex;
 }
 
+.boutonRejouer{
+    justify-content: center;
+    display: flex;
+}

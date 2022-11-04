@@ -43,13 +43,16 @@ function Fin(){
                 <Col className='infos'>
                     <div >
                         {joueurs.map((joueur:IJoueur)=>{
-                            return(    
-                                <div className='infoJoueurs'>{joueur.nom +" dois boire "+joueur.shots+" gorgées"}<br/></div>
-                                
+                            return(  
+                                <div>  
+                                    <div className='infoJoueurs'>{joueur.nom +" dois boire "+joueur.shots+" gorgées"}</div>
+                                    <br/>
+                                </div>
                             )
                         })}
                     </div>
-                    <div>
+                    <br/>
+                    <div className='boutonRejouer'>
                         <Button variant="dark" size="lg" onClick={goJeux}> Rejouer </Button>
                     </div>
                 </Col>
