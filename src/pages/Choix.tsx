@@ -47,6 +47,7 @@ function Choix(){
     function retirerSyllabe(s:any){
         setSyllabesUsed(syllabesUsed.concat([s]))
     }
+    useEffect(()=>{console.log(syllabesLeft)},[syllabesLeft])
 
     const wheelStopped = () =>{
         setStyleDivResultat({display:"flex"})
@@ -55,11 +56,12 @@ function Choix(){
         retirerSyllabe(syllabesLeft[choice])
         setCanPlay(false)
     }
-
+    
     useEffect(()=>{
         console.log('syllabesUsed changed')
         console.log(syllabesUsed)
-        setSyllabesLeft(syllabesLeft.filter(s => !syllabesUsed.includes(s)))
+        
+        setSyllabesLeft(syllabes.filter(s => !syllabesUsed.find((ss:any) => ss.option ===s.option)))
     },[syllabesUsed])
 
     useEffect(()=>{
