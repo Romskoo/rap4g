@@ -47,7 +47,7 @@ function Fin(){
                             if(joueur.nom !== ''){
                                 return(  
                                     <div>  
-                                        <div className='infoJoueurs'>{joueur.nom +" dois boire "+joueur.shots+" gorgées"}</div>
+                                        <div className='infoJoueurs'>{joueur.nom +" doit boire "+joueur.shots+" gorgées"}</div>
                                         <br/>
                                     </div>
                                 )

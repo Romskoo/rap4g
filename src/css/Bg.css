@@ -43,6 +43,8 @@ body > #root > div {
     display: flex;
     justify-content: center;
     align-content: flex-start;
+    color: white;
+    font-size: xx-large;
 }
 
 .infoJoueurs{
@@ -67,4 +69,17 @@ body > #root > div {
     font-size: x-large;
     text-align: center;
     display: flex;
+}
+
+.nbShots{
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+}
+
+.colNbSHots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

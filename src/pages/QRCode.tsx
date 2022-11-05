@@ -22,7 +22,8 @@ function QRCodePage(){
     const goJeux = () =>{
         navigate('/Jeux',{state:{
             joueurs:state.joueurs,
-            syllabesUsed:state.syllabesUsed
+            syllabesUsed:state.syllabesUsed,
+            syllabe:state.syllabe
         }})
     }
 

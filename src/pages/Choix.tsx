@@ -10,6 +10,12 @@ function Choix(){
         display:string;
     }
 
+    interface IJoueur{
+        nom:string,
+        numero:number,
+        shots:number
+    }
+
     let location = useLocation();
     let state:any = location.state;
     let navigate =  useNavigate();
@@ -40,7 +46,8 @@ function Choix(){
     const clickJouer = () =>{
         navigate('/QRCode',{state:{
             joueurs: state.joueurs,
-            syllabesUsed:syllabesUsed
+            syllabesUsed:syllabesUsed,
+            syllabe:syllabeChoice
         }})
     }
     
@@ -67,6 +74,11 @@ function Choix(){
 
         }else if(state.joueurs === undefined || state.syllabesUsed===undefined){
             navigate('/Home')           
+        }
+        else{
+            state.joueurs.forEach((joueur:IJoueur) => {
+                joueur.shots = 0
+            })
         }
     },[state,navigate])
 
