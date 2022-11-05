@@ -38,7 +38,7 @@ function Choix(){
     }
 
     const clickJouer = () =>{
-        navigate('/Jeux',{state:{
+        navigate('/QRCode',{state:{
             joueurs: state.joueurs,
             syllabesUsed:syllabesUsed
         }})
@@ -57,10 +57,7 @@ function Choix(){
         setCanPlay(false)
     }
     
-    useEffect(()=>{
-        console.log('syllabesUsed changed')
-        console.log(syllabesUsed)
-        
+    useEffect(()=>{      
         setSyllabesLeft(syllabes.filter(s => !syllabesUsed.find((ss:any) => ss.option ===s.option)))
     },[syllabesUsed])
 

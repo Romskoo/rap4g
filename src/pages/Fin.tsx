@@ -41,14 +41,17 @@ function Fin(){
             <Container>
                 <Col></Col>
                 <Col className='infos'>
+                    <br/>
                     <div >
                         {joueurs.map((joueur:IJoueur)=>{
-                            return(  
-                                <div>  
-                                    <div className='infoJoueurs'>{joueur.nom +" dois boire "+joueur.shots+" gorgées"}</div>
-                                    <br/>
-                                </div>
-                            )
+                            if(joueur.nom !== ''){
+                                return(  
+                                    <div>  
+                                        <div className='infoJoueurs'>{joueur.nom +" dois boire "+joueur.shots+" gorgées"}</div>
+                                        <br/>
+                                    </div>
+                                )
+                            }           
                         })}
                     </div>
                     <br/>

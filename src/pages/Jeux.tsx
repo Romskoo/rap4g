@@ -17,7 +17,7 @@ function Jeux(){
     const [joueurs,setJoueurs] = useState<IJoueur[]>([]);
     const [nbShots,setNbShots] = useState<number>(2)
     const [numeroPerdants,setNumeroPerdants] = useState<number[]>([])
-    const nbPerdantMax = 1
+    const [nbPerdantMax,setNbPerdantMax] = useState(1)
 
     const afficheShots = () =>{
         return(
@@ -26,13 +26,19 @@ function Jeux(){
     }
 
     useEffect(()=>{
+        if(joueurs.length > 0)
+            setNbPerdantMax(Math.ceil(joueurs.length * 0.3))
+        
+    },[joueurs])
+
+    useEffect(()=>{
         if(numeroPerdants.length === nbPerdantMax){
             navigate('/Fin',{state:{
                 joueurs: joueurs,
                 syllabesUsed:state.syllabesUsed
             }})
         }
-    },[numeroPerdants,joueurs,navigate,state.syllabesUsed])
+    },[numeroPerdants,nbPerdantMax,joueurs,navigate,state.syllabesUsed])
 
     useEffect(()=>{
         if(state === null){

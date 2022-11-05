@@ -56,3 +56,15 @@ body > #root > div {
     justify-content: center;
     display: flex;
 }
+
+.divQRCode{
+    display:flex;
+    justify-content: center;
+}
+
+.phraseQRCode{
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    display: flex;
+}
