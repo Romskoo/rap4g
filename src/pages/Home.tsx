@@ -32,7 +32,11 @@ function Home(){
             <Container >
                 <br/>
                 <Row >
-                    <Col ></Col>
+                    <Col >
+                        <div className='logo'>
+                            <span className='rap' style={{color:'white'}}>Rap</span><span className='4g' style={{color:'red',fontWeight:'bold'}}>4G</span>
+                        </div>
+                    </Col>
                     <Col>
                             {joueurs.map((joueur:IJoueur)=>{
                                 return(

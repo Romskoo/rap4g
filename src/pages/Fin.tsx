@@ -39,7 +39,11 @@ function Fin(){
     return(
         <div className='page Fin'>
             <Container>
-                <Col></Col>
+                <Col>
+                    <div className='logo'>
+                        <span className='rap' style={{color:'white'}}>Rap</span><span className='4g' style={{color:'red',fontWeight:'bold'}}>4G</span>
+                    </div>
+                </Col>
                 <Col className='infos'>
                     <br/>
                     <div >

@@ -32,7 +32,11 @@ function QRCodePage(){
             <Container>
                 <br/>
                 <Row>
-                    <Col></Col>
+                    <Col>
+                        <div className='logo'>
+                            <span className='rap' style={{color:'white'}}>Rap</span><span className='4g' style={{color:'red',fontWeight:'bold'}}>4G</span>
+                        </div>
+                    </Col>
                     <Col>
                         <div className='phraseQRCode'>Scannez le QRCode pour accéder à une instru :</div>
                         <br/>

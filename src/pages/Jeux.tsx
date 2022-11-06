@@ -52,61 +52,69 @@ function Jeux(){
 
     
     return(
-        <div className='page Jeux'>
+        <div className='page'>
             <Container>
-                <Row>
-                    <Col>
-                        <div className='pt-3 ps-3 countdown'>                       
-                            <CountdownCircleTimer
-                                isPlaying
-                                duration={30}
-                                colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-                                colorsTime={[ 30,20,10, 0]}
-                                onComplete={() => {
-                                    setNbShots(nbShots+1)
-                                    return { shouldRepeat: true }
-                                }}
-                                >
-                                {({ remainingTime }) => remainingTime}
-                            </CountdownCircleTimer>
-                        </div>
-                    </Col>
-                    <Col className='colNbSHots'>
-                        <div className='nbShots'>
-                            {nbShots}
-                            <img src={imageVerre} alt='verre' width='20em'/>
-                        </div>
-                    </Col>
-                    <Col className='colNbSHots'>
-                        <div className='nbShots'>
-                            Rîmes en : {state.syllabe}
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <br/>
-                    <div className='phraseExp'>Cliquez sur le joueur lorsqu'il perd :</div>
-                </Row>
-                <Row md={3}>                   
-                    {joueurs.map((joueur:IJoueur) =>{
-                        if(joueur.nom !== ''){
-                            return(
-                                <Col>
-                                    <div key={joueur.numero.toString()} className='joueur' 
-                                        style={{backgroundColor: joueur.shots !== 0 ? 'red': '#7b7b8b'}}
-                                        onClick={()=>{
-                                            if(joueur.shots === 0){
-                                                joueur.shots = nbShots
-                                                setNumeroPerdants(current => [...current,joueur.numero])
-                                            }                                   
-                                        }}>{joueur.nom}</div>
-                                </Col>
-                            )
-                        }
-                        
-                    })
-                    }                   
-                </Row>
+                <Col>
+                    <div className='logo'>
+                        <span className='rap' style={{color:'white'}}>Rap</span><span className='4g' style={{color:'red',fontWeight:'bold'}}>4G</span>
+                    </div>
+                </Col>
+                <Col className='Jeux'>
+                    <Row>
+                        <Col>
+                            <div className='pt-3 ps-3 countdown'>                       
+                                <CountdownCircleTimer
+                                    isPlaying
+                                    duration={30}
+                                    colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+                                    colorsTime={[ 30,20,10, 0]}
+                                    onComplete={() => {
+                                        setNbShots(nbShots+1)
+                                        return { shouldRepeat: true }
+                                    }}
+                                    >
+                                    {({ remainingTime }) => remainingTime}
+                                </CountdownCircleTimer>
+                            </div>
+                        </Col>
+                        <Col className='colNbSHots'>
+                            <div className='nbShots'>
+                                {nbShots}
+                                <img src={imageVerre} alt='verre' width='20em'/>
+                            </div>
+                        </Col>
+                        <Col className='colNbSHots'>
+                            <div className='nbShots'>
+                                Rîmes en : {state.syllabe}
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <br/>
+                        <div className='phraseExp'>Cliquez sur le joueur lorsqu'il perd :</div>
+                    </Row>
+                    <Row md={3}>                   
+                        {joueurs.map((joueur:IJoueur) =>{
+                            if(joueur.nom !== ''){
+                                return(
+                                    <Col>
+                                        <div key={joueur.numero.toString()} className='joueur' 
+                                            style={{backgroundColor: joueur.shots !== 0 ? 'red': '#7b7b8b'}}
+                                            onClick={()=>{
+                                                if(joueur.shots === 0){
+                                                    joueur.shots = nbShots
+                                                    setNumeroPerdants(current => [...current,joueur.numero])
+                                                }                                   
+                                            }}>{joueur.nom}</div>
+                                    </Col>
+                                )
+                            }
+                            
+                        })
+                        }                   
+                    </Row>
+                </Col>
+                <Col></Col>
             </Container>
         </div>
     )
