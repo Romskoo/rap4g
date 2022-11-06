@@ -14,8 +14,10 @@ body > #root > div {
 }
 
 .joueur{
+    font-size: large;
     background-color: #7b7b8b;
-    border-color: black;
+    border:1.5px solid black;
+    border-radius: 7%;
     justify-content: center;
     display: flex;
     margin: 1em;

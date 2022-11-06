@@ -31,7 +31,8 @@ function Choix(){
     const [styleDivResultat,setStyleDivResultat] = useState<style>({display:"none"})
 
     function randomChoice (){
-        var random = Math.round(1 + Math.random() * (syllabesLeft.length ))
+        var random = Math.round(0 + Math.random() * (syllabesLeft.length -1 ))
+        console.log(random)
         setChoice(random)
         setSyllabeChoice(syllabesLeft[random].option)
     }

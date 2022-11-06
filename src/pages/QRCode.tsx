@@ -39,7 +39,7 @@ function QRCodePage(){
                         <div className='divQRCode'>
                             <QRCode
                             size={256}
-                            style={{ height: "auto", maxWidth: "70%", width: "70%" }}
+                            style={{ height: "auto", maxWidth: "100%", width: "100%" }}
                             value={instru}
                             viewBox={`0 0 256 256`}
                             />

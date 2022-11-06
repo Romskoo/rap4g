@@ -89,14 +89,21 @@ function Jeux(){
                 </Row>
                 <Row md={3}>                   
                     {joueurs.map((joueur:IJoueur) =>{
-                        return(
-                            <Col>
-                                <div key={joueur.numero.toString()} className='joueur' onClick={()=>{
-                                    joueur.shots = nbShots
-                                    setNumeroPerdants(current => [...current,joueur.numero])
-                                    }}>{joueur.nom}</div>
-                            </Col>
-                        )
+                        if(joueur.nom !== ''){
+                            return(
+                                <Col>
+                                    <div key={joueur.numero.toString()} className='joueur' 
+                                        style={{backgroundColor: joueur.shots !== 0 ? 'red': '#7b7b8b'}}
+                                        onClick={()=>{
+                                            if(joueur.shots === 0){
+                                                joueur.shots = nbShots
+                                                setNumeroPerdants(current => [...current,joueur.numero])
+                                            }                                   
+                                        }}>{joueur.nom}</div>
+                                </Col>
+                            )
+                        }
+                        
                     })
                     }                   
                 </Row>
