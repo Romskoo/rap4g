@@ -10,18 +10,19 @@ function Home(){
     interface IJoueur{
         nom:string,
         numero:number,
-        points:number
+        shots:number
     }
 
     let navigate = useNavigate();
-    const [joueurs, setJoueurs] = useState<IJoueur[]>([{nom:'',numero:0,points:0}]);
+    const [joueurs, setJoueurs] = useState<IJoueur[]>([{nom:'',numero:0,shots:0}]);
 
     const goChoice = () =>{
         if(joueurs.length > 1){
             console.log(joueurs)
             navigate('/Choix',{
                 state:{
-                    joueurs:joueurs
+                    joueurs:joueurs,
+                    syllabesUsed:[]
                 }
             })
         }       
@@ -31,7 +32,11 @@ function Home(){
             <Container >
                 <br/>
                 <Row >
-                    <Col ></Col>
+                    <Col >
+                        <div className='logo'>
+                            <span className='rap' style={{color:'white'}}>Rap</span><span className='4g' style={{color:'red',fontWeight:'bold'}}>4G</span>
+                        </div>
+                    </Col>
                     <Col>
                             {joueurs.map((joueur:IJoueur)=>{
                                 return(
@@ -39,7 +44,7 @@ function Home(){
                                         <Form.Control size="lg" type="text" placeholder={'Joueur '+joueur.numero} onChange={(e:any)=>{
                                                 joueur.nom = e.target.value
                                                 if(joueur.numero === joueurs.length-1){
-                                                    setJoueurs( current => [...current,{nom:'',numero:joueurs.length,points:0}])
+                                                    setJoueurs( current => [...current,{nom:'',numero:joueurs.length,shots:0}])
                                                 }                           
                                             }} />
                                         <br/>

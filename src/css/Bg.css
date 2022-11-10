@@ -8,7 +8,84 @@ body > #root > div {
   }
 
 .Syll{
-    align-content: center;
+    justify-content: center;
     color: white;
+    font-size: xx-large;
+}
+
+.joueur{
+    transform: scale(1.1);
     font-size: large;
+    background-color: #7b7b8b;
+    border:1.5px solid black;
+    border-radius: 7%;
+    justify-content: center;
+    display: flex;
+    margin: 1em;
+}
+
+
+.shots{
+    color: white;
+    font-size: xx-large;
+}
+
+.phraseExp{
+    color: white;
+    font-size: x-large;
+    justify-content: center;
+    display: flex;
+}
+
+.countdown{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    color: white;
+    font-size: xx-large;
+}
+
+.infoJoueurs{
+    color: white;
+    font-size: x-large;
+    justify-content: center;
+    display: flex;
+}
+
+.boutonRejouer{
+    justify-content: center;
+    display: flex;
+}
+
+.divQRCode{
+    display:flex;
+    justify-content: center;
+}
+
+.phraseQRCode{
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    display: flex;
+}
+
+.nbShots{
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+}
+
+.colNbSHots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    font-size: x-large;
+    text-decoration: underline;
 }
