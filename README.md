@@ -24,7 +24,7 @@ Ajouter le azure-webapps-node.yml a mon git hub et le configurer avec ce qui cor
 
 ajouter une action a github pour redéployer à chaque push
 
-### Serveur azure nu
+### Serveur azure de zéro
 
 ssh Romsko@20.56.108.103
 
