@@ -44,4 +44,6 @@ git clone https://github.com/Romskoo/rap4g.git
 
 sudo npm install -g serve
 
-sudo serve -s build &
+sudo npm install -g pm2
+
+sudo pm2 serve build 3001 --spa
