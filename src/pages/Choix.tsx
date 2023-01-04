@@ -20,7 +20,7 @@ function Choix(){
     let state:any = location.state;
     let navigate =  useNavigate();
 
-    const syllabes = [{option:'RA'},{option:'IR'},{option:'TO'},{option:'LU'},{option:'LA'},{option:'PLA'},{option:'CHI'},{option:'Ré'},{option:'UR'},{option:'ITE'},{option:'CHE'},{option:'EUR'},{option:'RO'},{option:'NI'},{option:'VU'},{option:'IS'},{option:'Lé'},{option:'PI'},{option:'INE'},{option:'MA'},{option:'NO'},{option:'FI'},{option:'SA'}]
+    const syllabes = [{option:'RA'},{option:'IR'},{option:'TO'},{option:'LU'},{option:'LA'},{option:'CHI'},{option:'Ré'},{option:'UR'},{option:'ITE'},{option:'U'},{option:'CHE'},{option:'EUR'},{option:'RO'},{option:'NI'},{option:'VU'},{option:'I'},{option:'Lé'},{option:'TA'},{option:'PI'},{option:'INE'},{option:'O'},{option:'MA'},{option:'NO'},{option:'FI'},{option:'SA'},{option:'A'}]
     const [syllabesLeft,setSyllabesLeft] = useState(syllabes)
     const [syllabesUsed,setSyllabesUsed] = useState(state.syllabesUsed)
     const [canSpin, setCanSpin] = useState(false);
