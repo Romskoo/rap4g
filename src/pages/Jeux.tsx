@@ -16,14 +16,15 @@ function Jeux(){
     var state = location.state;
     var navigate = useNavigate()
     const [joueurs,setJoueurs] = useState<IJoueur[]>([]);
-    const [nbShots,setNbShots] = useState<number>(2)
+    const [nbShots,setNbShots] = useState<number>(5)
     const [numeroPerdants,setNumeroPerdants] = useState<number[]>([])
     const [nbPerdantMax,setNbPerdantMax] = useState(1)
 
 
     useEffect(()=>{
         if(joueurs.length > 0)
-            setNbPerdantMax(Math.ceil(joueurs.length * 0.3))
+            //setNbPerdantMax(Math.ceil(joueurs.length * 0.3))
+            setNbPerdantMxx(joueurs.length)
         
     },[joueurs])
 
@@ -65,11 +66,11 @@ function Jeux(){
                             <div className='pt-3 ps-3 countdown'>                       
                                 <CountdownCircleTimer
                                     isPlaying
-                                    duration={30}
+                                    duration={60}
                                     colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
                                     colorsTime={[ 30,20,10, 0]}
                                     onComplete={() => {
-                                        setNbShots(nbShots+1)
+                                        setNbShots(nbShots-1)
                                         return { shouldRepeat: true }
                                     }}
                                     >
