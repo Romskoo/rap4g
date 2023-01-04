@@ -24,7 +24,7 @@ function Jeux(){
     useEffect(()=>{
         if(joueurs.length > 0)
             //setNbPerdantMax(Math.ceil(joueurs.length * 0.3))
-            setNbPerdantMxx(joueurs.length)
+            setNbPerdantMax(joueurs.length)
         
     },[joueurs])
 
